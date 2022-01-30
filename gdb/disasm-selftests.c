@@ -54,6 +54,7 @@ print_one_insn_test (struct gdbarch *gdbarch)
     case bfd_arch_mips:
     case bfd_arch_tic6x:
     case bfd_arch_xtensa:
+    case bfd_arch_tricore:
       return;
     case bfd_arch_s390:
       /* nopr %r7 */
