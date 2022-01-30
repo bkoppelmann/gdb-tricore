@@ -30,16 +30,16 @@ Schedule of variations:
     
 === gdb Summary ===
 
-# of expected passes		62983
-# of unexpected failures	20
-# of unexpected successes	12
-# of expected failures		291
-# of unknown successes		2
-# of known failures			71
-# of unresolved testcases	7
-# of untested testcases		183
-# of unsupported tests		385
-# of paths in test names	2
-# of duplicate test names	114
+nr of expected passes		62983
+nr of unexpected failures	20
+nr of unexpected successes	12
+nr of expected failures		291
+nr of unknown successes		2
+nr of known failures			71
+nr of unresolved testcases	7
+nr of untested testcases		183
+nr of unsupported tests		385
+nr of paths in test names	2
+nr of duplicate test names	114
 /home/dummy/aurix_gdb_10/bin/tricore-elf-gdb version  10.0.50.20200909-git -nw -nx -iex "set height 0" -iex "set width 0" 
 
