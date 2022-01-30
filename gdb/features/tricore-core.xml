@@ -7,50 +7,48 @@
 
 <!DOCTYPE feature SYSTEM "gdb-target.dtd">
 <feature name="org.gnu.gdb.tricore.core">
-  <reg name="d0" bitsize="32" regnum="0"/>
-  <reg name="d1" bitsize="32" type="data_ptr"/>
-  <reg name="d2" bitsize="32"/>
-  <reg name="d3" bitsize="32"/>
-  <reg name="d4" bitsize="32"/>
-  <reg name="d5" bitsize="32"/>
-  <reg name="d6" bitsize="32"/>
-  <reg name="d7" bitsize="32"/>
-  <reg name="d8" bitsize="32"/>
-  <reg name="d9" bitsize="32"/>
-  <reg name="d10" bitsize="32"/>
-  <reg name="d11" bitsize="32"/>
-  <reg name="d12" bitsize="32"/>
-  <reg name="d13" bitsize="32"/>
-  <reg name="d14" bitsize="32"/>
-  <reg name="d15" bitsize="32"/>
-  <reg name="a0" bitsize="32"/>
-  <reg name="a1" bitsize="32"/>
-  <reg name="a2" bitsize="32"/>
-  <reg name="a3" bitsize="32"/>
-  <reg name="a4" bitsize="32"/>
-  <reg name="a5" bitsize="32" type="code_ptr"/>
-  <reg name="a6" bitsize="32"/>
-  <reg name="a7" bitsize="32"/>
-  <reg name="a8" bitsize="32"/>
-  <reg name="a9" bitsize="32"/>
-  <reg name="a10" bitsize="32"/>
-  <reg name="a11" bitsize="32"/>
-  <reg name="a12" bitsize="32"/>
-  <reg name="a13" bitsize="32"/>
-  <reg name="a14" bitsize="32"/>
-  <reg name="a15" bitsize="32"/>
-  <reg name="lcx" bitsize="32"/>
-  <reg name="fcx" bitsize="32"/>
-  <reg name="pcxi" bitsize="32"/>
-  <reg name="psw" bitsize="32"/>
-  <reg name="pc" bitsize="32"/>
-  <reg name="icr" bitsize="32"/>
-  <reg name="isp" bitsize="32"/>
-  <reg name="btv" bitsize="32"/>
-  <reg name="biv" bitsize="32"/>
-  <reg name="syscon" bitsize="32"/>
-  <reg name="pmucon0" bitsize="32"/>
-  <reg name="cycles" bitsize="32"/>
-  <reg name="instr" bitsize="32"/>
-  <reg name="time" bitsize="32"/>
+  <reg name="d0" bitsize="32" regnum="0" type="int" group="general"/>
+  <reg name="d1" bitsize="32" type="int" group="general"/>
+  <reg name="d2" bitsize="32" type="int" group="general"/>
+  <reg name="d3" bitsize="32" type="int" group="general"/>
+  <reg name="d4" bitsize="32" type="int" group="general"/>
+  <reg name="d5" bitsize="32" type="int" group="general"/>
+  <reg name="d6" bitsize="32" type="int" group="general"/>
+  <reg name="d7" bitsize="32" type="int" group="general"/>
+  <reg name="d8" bitsize="32" type="int" group="general"/>
+  <reg name="d9" bitsize="32" type="int" group="general"/>
+  <reg name="d10" bitsize="32" type="int" group="general"/>
+  <reg name="d11" bitsize="32" type="int" group="general"/>
+  <reg name="d12" bitsize="32" type="int" group="general"/>
+  <reg name="d13" bitsize="32" type="int" group="general"/>
+  <reg name="d14" bitsize="32" type="int" group="general"/>
+  <reg name="d15" bitsize="32" type="int" group="general"/>
+  <reg name="a0" bitsize="32" type="int" group="general"/>
+  <reg name="a1" bitsize="32" type="int" group="general"/>
+  <reg name="a2" bitsize="32" type="int" group="general"/>
+  <reg name="a3" bitsize="32" type="int" group="general"/>
+  <reg name="a4" bitsize="32" type="int" group="general"/>
+  <reg name="a5" bitsize="32" type="int" group="general"/>
+  <reg name="a6" bitsize="32" type="int" group="general"/>
+  <reg name="a7" bitsize="32" type="int" group="general"/>
+  <reg name="a8" bitsize="32" type="int" group="general"/>
+  <reg name="a9" bitsize="32" type="int" group="general"/>
+  <reg name="a10" bitsize="32" type="data_ptr" group="general"/>
+  <reg name="a11" bitsize="32" type="code_ptr" group="general"/>
+  <reg name="a12" bitsize="32" type="int" group="general"/>
+  <reg name="a13" bitsize="32" type="int" group="general"/>
+  <reg name="a14" bitsize="32" type="int" group="general"/>
+  <reg name="a15" bitsize="32" type="int" group="general"/>
+  <reg name="lcx" bitsize="32" type="int" group="general"/>
+  <reg name="fcx" bitsize="32" type="int" group="general"/>
+  <reg name="pcxi" bitsize="32" type="int" group="general"/>
+  <reg name="psw" bitsize="32" type="int" group="general"/>
+  <reg name="pc" bitsize="32" type="code_ptr" group="general"/>
+  <reg name="icr" bitsize="32" type="int" group="general"/>
+  <reg name="isp" bitsize="32" type="data_ptr" group="general"/>
+  <reg name="btv" bitsize="32" type="code_ptr" group="general"/>
+  <reg name="biv" bitsize="32" type="code_ptr" group="general"/>
+  <reg name="syscon" bitsize="32" type="int" group="general"/>
+  <reg name="pmucon0" bitsize="32" type="int" group="general"/>
+  <reg name="dmucon" bitsize="32" type="int" group="general"/>
 </feature>
