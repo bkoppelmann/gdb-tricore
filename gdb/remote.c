@@ -86,6 +86,11 @@ Use a remote computer via a serial line, using a gdb-specific protocol.\n\
 Specify the serial device it is connected to\n\
 (e.g. /dev/ttyS0, /dev/ttya, COM1, etc.).");
 
+/* define if virtual IO or semihosting is done by gdbclient */
+#define __VIRTUAL_IO__
+extern void tricore_vio_init (void);
+extern int tricore_vio (void);
+
 #define OPAQUETHREADBYTES 8
 
 /* a 64 bit opaque identifier */
@@ -5645,7 +5650,9 @@ remote_target::open_1 (const char *name, int from_tty, int extended_p)
 
   /* First delete any symbols previously loaded from shared libraries.  */
   no_shared_libraries (NULL, 0);
-
+#ifdef __VIRTUAL_IO__
+  tricore_vio_init ();
+#endif
   /* Start the remote connection.  If error() or QUIT, discard this
      target (we'd otherwise be in an inconsistent state) and then
      propogate the error on up the exception chain.  This ensures that
@@ -7508,6 +7515,23 @@ Packet: '%s'\n"),
 	  event->ws.value.sig = (enum gdb_signal) sig;
 	else
 	  event->ws.value.sig = GDB_SIGNAL_UNKNOWN;
+#ifdef __VIRTUAL_IO__
+          if (event->ws.value.sig != 2)
+            {
+              int do_virtio;
+              for (inferior *inf : all_non_exited_inferiors (this))
+         	{
+         	      thread_info *thread = any_live_thread_of_inferior (inf);
+         	      switch_to_thread_no_regs (thread);
+         	}
+              do_virtio = tricore_vio ();
+              if (do_virtio!=0)
+                {
+                  event->ws.kind = TARGET_WAITKIND_IGNORE;
+                  resume(event->ptid,0,event->ws.value.sig);
+                }
+            }
+#endif
       }
       break;
     case 'w':		/* Thread exited.  */
