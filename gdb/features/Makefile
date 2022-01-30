@@ -95,7 +95,7 @@ s390-tevx-linux64-expedite = r14l,r15l,pswa
 s390-gs-linux64-expedite = r14,r15,pswa
 s390x-expedite = r14,r15,pswa
 tic6x-expedite = A15,PC
-tricore-expedite = a15,pc
+tricore-expedite = a10,pc
 
 
 XSLTPROC = xsltproc
@@ -238,7 +238,8 @@ FEATURE_XMLFILES = aarch64-core.xml \
 	rx.xml \
 	tic6x-c6xp.xml \
 	tic6x-core.xml \
-	tic6x-gp.xml 
+	tic6x-gp.xml \
+	tricore-core.xml
 
 FEATURE_CFILES = $(patsubst %.xml,%.c,$(FEATURE_XMLFILES))
 
