@@ -997,6 +997,9 @@ typedef struct bfd_section
      TMS320C54X only.  */
 #define SEC_TIC54X_CLINK           0x20000000
 
+  /* This is a PCP section for Infineon TriCore/PCP */
+#define SEC_PCP 0x10000000
+
   /* This section contains vliw code.  This is for Toshiba MeP only.  */
 #define SEC_MEP_VLIW               0x20000000
 
@@ -1936,6 +1939,7 @@ enum bfd_architecture
 #define bfd_mach_tricore_v1_3_1 0x100
 #define bfd_mach_tricore_v1_6 0x200
 #define bfd_mach_tricore_v1_6_1 0x400
+#define bfd_mach_tricore_v1_6_2 0x800
 #define bfd_mach_tricore_pcp 0x10
 #define bfd_mach_tricore_pcp2 0x20
 #define bfd_mach_tricore_mask 0xf0f
