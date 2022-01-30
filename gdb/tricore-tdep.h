@@ -34,15 +34,6 @@ struct gdbarch_tdep
 #include "gdb_stat.h"
 #endif /* __VIRTUAL_IO__ */
 
-#ifdef TSIM_CYCLES
-#define CYCLES_REGNUM 44
-#define INSTR_REGNUM 45
-#define TIME_REGNUM 46
-//#define TRICORE_NUM_REGS 47
-#else
-//#define TRICORE_NUM_REGS 44
-#endif
-
 /* Register numbers.  */
 enum tricore_regnum
 {
