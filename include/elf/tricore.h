@@ -65,6 +65,10 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 #define EF_TRICORE_V1_6_1			0x00000400
 #define EF_EABI_TRICORE_V1_6_1		0x00200000
 
+/* Instruction set architecture V1.6.2.  */
+
+#define EF_TRICORE_V1_6_2       0x00000800
+#define EF_EABI_TRICORE_V1_6_2  0x00100000
 
 /* PCP co-processor.  */
 
