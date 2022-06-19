@@ -2384,17 +2384,14 @@ static void tricore_vio_open_creat (int is_open_call)
 
   regcache_cooked_read_unsigned (regcache,TRICORE_A4_REGNUM,&uvalue);
   nameptr = (CORE_ADDR) uvalue;
-  filename_gdb = target_read_string (nameptr, FILENAME_MAX);
-//  filename = (char *) malloc(namelen);
+  filename_gdb = target_read_string (nameptr, FILENAME_MAX, &namelen);
+  if (namelen==0)
+  {
+    tricore_vio_set_result (-1, EIO);
+    return;
+  }
+  filename = (char *) malloc(namelen);
   strcpy(filename,filename_gdb.get());
-  if (retval != 0)
-    {
-      if (namelen > 0)
-        free (filename);
-      tricore_vio_set_result (-1, EIO);
-      return;
-    }
-
   if (!is_open_call)
     {
       flags = O_CREAT | O_WRONLY | O_TRUNC;
@@ -2789,16 +2786,16 @@ static void tricore_vio_unlink (void)
 
   regcache_cooked_read_unsigned (regcache,TRICORE_A4_REGNUM,&uvalue);
   nameptr =(CORE_ADDR) uvalue;
-  filename_gdb = target_read_string (nameptr, FILENAME_MAX);
-  //filename=(char *) malloc(namelen);
-  strcpy(filename,filename_gdb.get());
-  if (retval != 0)
+  filename_gdb = target_read_string (nameptr, FILENAME_MAX, &namelen);
+  if (namelen==0)
+  {
     tricore_vio_set_result (-1, EIO);
-  else
-    {
-      retval = unlink (filename);
-      tricore_vio_set_result (retval, errno);
-    }
+    return;
+  }
+  filename = (char *) malloc(namelen);
+  strcpy(filename,filename_gdb.get());
+  retval = unlink (filename);
+  tricore_vio_set_result (retval, errno);
 
   if (namelen > 0)
     free (filename);
