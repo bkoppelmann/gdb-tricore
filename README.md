@@ -64,4 +64,28 @@ of paths in test names	2
 of duplicate test names	112
 
 /home/dummy/aurix_gdb_10/bin/tricore-elf-gdb version  10.0.50.20200909-git -nw -nx -iex "set height 0" -iex "set width 0" 
-
+configure \
+--host=x86_64-linux-gnu \
+--target=tricore-elf \
+--program-prefix=tricore-elf- \
+--disable-nls \
+--disable-itcl \
+--disable-tk \
+--disable-tcl \
+--disable-winsup \
+--disable-gdbtk \
+--disable-libgui \
+--disable-rda \
+--disable-sid \
+--disable-sim \
+--disable-newlib \
+--disable-libgloss \
+--disable-gas \
+--disable-ld \
+--disable-binutils \
+--disable-gprof \
+--disable-source-highlight \
+--with-system-zlib \
+--prefix=$INSTALL_PREFIX \
+--disable-werror \
+--with-python
